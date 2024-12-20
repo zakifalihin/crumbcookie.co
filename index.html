@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pengisian</title>
   <meta name="description"
     content="Nikmati berbagai macam kue lezat dari CrumbCookie.co. Dibuat dengan cinta, bahan terbaik, dan rasa yang tak tertandingi.">
   <meta name="keywords" content="cookies, CrumbCookie, kue lezat, cookies terbaik">
@@ -22,15 +23,20 @@
       <h1>CrumbCookie.co</h1>
     </div>
     <nav>
-      <ul>
+      <ul id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#produk">Produk</a></li>
         <li><a href="#cart">Keranjang</a></li>
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
-  </header>
-
+    <div class="hamburger" id="hamburgerMenu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>  
+  
   <main>
     <section class="hero" id="home">
       <div class="hero-content">
@@ -99,18 +105,120 @@
           </div>
         </div>
       </div>
+
+    <!-- Produk untuk Mobile (Slider) -->
+  <div class="mobile-products">
+    <div class="product-slider">
+      <div class="product-item">
+        <img src="images/chococrunchy.png" alt="Choco Crunchy Cookies">
+        <h3>Choco Crunchy Cookies</h3>
+        <p>Cookies klasik dengan cokelat leleh di setiap gigitan. <strong>Rp 15.000</strong></p>
+        <div class="quantity-selector">
+          <button class="minus" data-product="Choco Crunchy Cookies" data-price="15000">-</button>
+          <span class="quantity" data-product="Choco Crunchy Cookies">0</span>
+          <button class="plus" data-product="Choco Crunchy Cookies" data-price="15000">+</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="images/redvelvet.png" alt="Red Velvet Cookies">
+        <h3>Red Velvet Cookies</h3>
+        <p>Rasa red velvet dengan keju krim lembut. <strong>Rp 15.000</strong></p>
+        <div class="quantity-selector">
+          <button class="minus" data-product="Red Velvet Cookies" data-price="15000">-</button>
+          <span class="quantity" data-product="Red Velvet Cookies">0</span>
+          <button class="plus" data-product="Red Velvet Cookies" data-price="15000">+</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="images/original.png" alt="Oatmeal Original Cookies">
+        <h3>Original Cookies</h3>
+        <p>Cookies Original sehat dengan kismis manis. <strong>Rp 10.000</strong></p>
+        <div class="quantity-selector">
+          <button class="minus" data-product="Original Cookies" data-price="10000">-</button>
+          <span class="quantity" data-product="Original Cookies">0</span>
+          <button class="plus" data-product="Original Cookies" data-price="10000">+</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="images/matchacookie.png" alt="Matcha Cookies">
+        <h3>Matcha Cookies</h3>
+        <p>Cookies dengan rasa teh hijau yang lembut. <strong>Rp 15.000</strong></p>
+        <div class="quantity-selector">
+          <button class="minus" data-product="Matcha Cookies" data-price="15000">-</button>
+          <span class="quantity" data-product="Matcha Cookies">0</span>
+          <button class="plus" data-product="Matcha Cookies" data-price="15000">+</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="images/lotusbiscoff.png" alt="Lotus Biscoff Cookies">
+        <h3>Lotus Biscoff Cookies</h3>
+        <p>Cookies dengan rasa Biscoff yang renyah.<strong>Rp 15.000</strong></p>
+        <div class="quantity-selector">
+          <button class="minus" data-product="Lotus Biscoff Cookies" data-price="15000">-</button>
+          <span class="quantity" data-product="Lotus Biscoff Cookies">0</span>
+          <button class="plus" data-product="Lotus Biscoff Cookies" data-price="15000">+</button>
+        </div>
+      </div>
+    </div>
+    <!-- Tombol navigasi untuk menggeser slider -->
+    <button class="product-nav-prev" id="prevBtn">←</button>
+    <button class="product-nav-next" id="nextBtn">→</button>
+  </div>
     </section>
 
-    <section class="cart" id="cart">
-      <h2>Keranjang Belanja</h2>
-      <div class="cart-items">
-        <!-- Cart items will be dynamically inserted here -->
-      </div>
-      <div class="checkout-btn-container">
-        <button onclick="checkout()">Checkout</button>
-        <p class="total-price">Total: Rp 0</p>
-      </div>
-    </section>
+    
+<!-- Keranjang Belanja -->
+<div class="cart">
+  <h3>Keranjang Belanja</h3>
+  <div class="cart-items"></div>
+  
+  <!-- Opsi Pengiriman di Keranjang -->
+  <div class="delivery-option">
+    <label for="deliveryPickup">
+      <input type="radio" id="deliveryPickup" name="delivery" value="Ambil Langsung" onclick="updateFormFields()" checked> Ambil Langsung
+    </label>
+    <label for="deliveryCourier">
+      <input type="radio" id="deliveryCourier" name="delivery" value="Jasa Kurir" onclick="updateFormFields()"> Jasa Kurir
+    </label>
+  </div>
+
+  <button id="checkoutBtn" onclick="showForm()">Checkout</button>
+</div>
+
+
+<!-- Form Checkout (disembunyikan pada awalnya) -->
+<div id="checkoutForm" style="display:none;">
+  <h2>Form Checkout</h2>
+  <form id="checkoutFormDetails">
+    <div class="form-group">
+      <label for="userName">Nama:</label>
+      <input type="text" id="userName" name="userName" placeholder="Masukkan Nama Anda" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="userPhone">Nomor Telepon:</label>
+      <input type="text" id="userPhone" name="userPhone" placeholder="Masukkan Nomor Telepon" required>
+    </div>
+
+    <div class="form-group" id="addressGroup" style="display:none;">
+      <label for="userAddress">Alamat Pengiriman:</label>
+      <textarea id="userAddress" name="userAddress" placeholder="Masukkan Alamat Pengiriman" required></textarea>
+    </div>
+
+    <div class="form-actions">
+      <!-- Tombol Lanjutkan Pembayaran (di dalam Form Checkout) -->
+      <button type="button" id="submitBtn" onclick="submitForm()">Lanjutkan Pembayaran</button>
+      <button type="button" onclick="cancelForm()">Batal</button>
+    </div>
+  </form>
+</div>
+  </form>
+</div>
+
   </main>
 
   <footer>
