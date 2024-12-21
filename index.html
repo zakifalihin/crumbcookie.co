@@ -40,8 +40,8 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-content">
-        <h2>Delight in Every Bite</h2>
-        <p>Menyajikan kue terbaik dengan bahan-bahan pilihan. Nikmati setiap gigitan CrumbCookie!</p>
+        <h2>Hello Crumbers</h2>
+        <p>Menyajikan Cookies terbaik dengan bahan-bahan pilihan. Nikmati setiap gigitan CrumbCookie!</p>
         <a href="#produk" class="btn">Pesan Sekarang</a>
       </div>
     </section>
@@ -53,7 +53,7 @@
         <div class="product-item" data-aos="fade-up" data-aos-delay="100">
           <img src="images/chococrunchy.png" alt="Choco Crunchy Cookies">
           <h3>Choco Crunchy Cookies</h3>
-          <p>Cookies klasik dengan cokelat leleh di setiap gigitan. <strong>Rp 15.000</strong></p>
+          <p>Cookies dengan melted chocochips yang Crunchy. <strong>Rp 15.000</strong></p>
           <div class="quantity-selector">
             <button class="minus" data-product="Choco Crunchy Cookies" data-price="15000">-</button>
             <span class="quantity" data-product="Choco Crunchy Cookies">0</span>
@@ -75,7 +75,7 @@
         <div class="product-item" data-aos="fade-up" data-aos-delay="300">
           <img src="images/original.png" alt="Oatmeal Original Cookies">
           <h3>Original Cookies</h3>
-          <p>Cookies Original sehat dengan kismis manis. <strong>Rp 10.000</strong></p>
+          <p>Cookies Original dengan cokelat leleh di setiap gigitan. <strong>Rp 10.000</strong></p>
           <div class="quantity-selector">
             <button class="minus" data-product="Original Cookies" data-price="10000">-</button>
             <span class="quantity" data-product="Original Cookies">0</span>
@@ -104,78 +104,14 @@
             <button class="plus" data-product="Lotus Biscoff Cookies" data-price="15000">+</button>
           </div>
         </div>
-      </div>
+      </div>     
 
-    <!-- Produk untuk Mobile (Slider) -->
-  <div class="mobile-products">
-    <div class="product-slider">
-      <div class="product-item">
-        <img src="images/chococrunchy.png" alt="Choco Crunchy Cookies">
-        <h3>Choco Crunchy Cookies</h3>
-        <p>Cookies klasik dengan cokelat leleh di setiap gigitan. <strong>Rp 15.000</strong></p>
-        <div class="quantity-selector">
-          <button class="minus" data-product="Choco Crunchy Cookies" data-price="15000">-</button>
-          <span class="quantity" data-product="Choco Crunchy Cookies">0</span>
-          <button class="plus" data-product="Choco Crunchy Cookies" data-price="15000">+</button>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="images/redvelvet.png" alt="Red Velvet Cookies">
-        <h3>Red Velvet Cookies</h3>
-        <p>Rasa red velvet dengan keju krim lembut. <strong>Rp 15.000</strong></p>
-        <div class="quantity-selector">
-          <button class="minus" data-product="Red Velvet Cookies" data-price="15000">-</button>
-          <span class="quantity" data-product="Red Velvet Cookies">0</span>
-          <button class="plus" data-product="Red Velvet Cookies" data-price="15000">+</button>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="images/original.png" alt="Oatmeal Original Cookies">
-        <h3>Original Cookies</h3>
-        <p>Cookies Original sehat dengan kismis manis. <strong>Rp 10.000</strong></p>
-        <div class="quantity-selector">
-          <button class="minus" data-product="Original Cookies" data-price="10000">-</button>
-          <span class="quantity" data-product="Original Cookies">0</span>
-          <button class="plus" data-product="Original Cookies" data-price="10000">+</button>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="images/matchacookie.png" alt="Matcha Cookies">
-        <h3>Matcha Cookies</h3>
-        <p>Cookies dengan rasa teh hijau yang lembut. <strong>Rp 15.000</strong></p>
-        <div class="quantity-selector">
-          <button class="minus" data-product="Matcha Cookies" data-price="15000">-</button>
-          <span class="quantity" data-product="Matcha Cookies">0</span>
-          <button class="plus" data-product="Matcha Cookies" data-price="15000">+</button>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="images/lotusbiscoff.png" alt="Lotus Biscoff Cookies">
-        <h3>Lotus Biscoff Cookies</h3>
-        <p>Cookies dengan rasa Biscoff yang renyah.<strong>Rp 15.000</strong></p>
-        <div class="quantity-selector">
-          <button class="minus" data-product="Lotus Biscoff Cookies" data-price="15000">-</button>
-          <span class="quantity" data-product="Lotus Biscoff Cookies">0</span>
-          <button class="plus" data-product="Lotus Biscoff Cookies" data-price="15000">+</button>
-        </div>
-      </div>
-    </div>
-    <!-- Tombol navigasi untuk menggeser slider -->
-    <button class="product-nav-prev" id="prevBtn">←</button>
-    <button class="product-nav-next" id="nextBtn">→</button>
-  </div>
-    </section>
-
-    
 <!-- Keranjang Belanja -->
 <div class="cart">
   <h3>Keranjang Belanja</h3>
   <div class="cart-items"></div>
   
+<div class="total-price"></div>
   <!-- Opsi Pengiriman di Keranjang -->
   <div class="delivery-option">
     <label for="deliveryPickup">
@@ -201,11 +137,11 @@
     
     <div class="form-group">
       <label for="userPhone">Nomor Telepon:</label>
-      <input type="text" id="userPhone" name="userPhone" placeholder="Masukkan Nomor Telepon" required>
+      <input type="text" inputmode="numeric" id="userPhone" name="userPhone" placeholder="Masukkan Nomor Telepon" required>
     </div>
 
     <div class="form-group" id="addressGroup" style="display:none;">
-      <label for="userAddress">Alamat Pengiriman:</label>
+      <label for="userAddress">Alamat Customer:</label>
       <textarea id="userAddress" name="userAddress" placeholder="Masukkan Alamat Pengiriman" required></textarea>
     </div>
 
@@ -224,11 +160,11 @@
   <footer>
     <p>&copy; 2024 CrumbCookie.co - All Rights Reserved</p>
     <div class="social-icons">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
+      <a href="https://www.instagram.com/crumbcookie.co" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@crumbcookie.co?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
     </div>
   </footer>
+  
 
 <!-- Tambahkan link ke file JavaScript -->
 <script src="script.js"></script>

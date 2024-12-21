@@ -79,7 +79,9 @@ function updateCart() {
     total += item.price * item.quantity;
   });
 
+  // Perbarui total harga
   document.querySelector('.total-price').innerText = `Total: Rp ${total}`;
+  document.getElementById('totalCheckoutPrice').innerText = `Total Harga: Rp ${total}`;
 }
 
 function removeItem(product) {
@@ -156,37 +158,37 @@ function submitForm() {
     return;
   }
 
-  let orderSummary = `*Pesanan Anda di CrumbCookie.co:*\n\n`;
+  let orderSummary = `Pesanan Anda di CrumbCookie:\n\n`;
 
-  // Menambahkan informasi pesanan (contoh, ubah sesuai produk di keranjang)
-  orderSummary += `1. Choco Crunchy Cookies x2 - Rp 50000\n`; // Tambahkan data produk sesuai keranjang
-  orderSummary += `\n*Total Harga:* Rp 50000\n\n`;
+// Menambahkan informasi pesanan dengan penomoran dan tanda titik (.)
+cart.forEach((item, index) => {
+  orderSummary += `${index + 1}. ${item.product} x${item.quantity} - Rp ${item.price * item.quantity}\n`;
+});
 
-  // Menambahkan detail pengiriman
-  if (deliveryOption === "Ambil Langsung") {
-    orderSummary += `*Opsi Pengiriman:* Ambil Langsung\n`;
-    orderSummary += `*Alamat Toko:* https://goo.gl/maps/example123\n\n`;  // Link Google Maps ke alamat toko
-  } else {
-    orderSummary += `*Opsi Pengiriman:* Jasa kurir\n*Alamat Pengiriman:* ${userAddress}\n\n`;
-  }
+let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+orderSummary += `\nTotal Harga: Rp ${total}\n\n`;
 
-  // Menambahkan data pelanggan
-  orderSummary += `*Nama:* ${userName}\n`;
-  orderSummary += `*Nomor Telepon:* ${userPhone}\n\n`;
+// Menambahkan detail pengiriman
+if (deliveryOption === "Ambil Langsung") {
+  orderSummary += `Opsi Pengiriman: Ambil Langsung\n`;
+  orderSummary += `Alamat Toko    : https://maps.app.goo.gl/FvktZXtBDFaKo3H78\n\n`;  // Link Google Maps ke alamat toko
+} else {
+  orderSummary += `Opsi Pengiriman  : Jasa kurir\nAlamat Customer: ${userAddress}\n\n`;
+}
 
-  // Penutupan pesan
-  orderSummary += `Terima kasih telah berbelanja di CrumbCookie.co!`;
+// Menambahkan data pelanggan
+orderSummary += `Nama    : ${userName}\n`;
+orderSummary += `No Telp : ${userPhone}\n\n`;
 
-  // Membuat link WhatsApp berdasarkan pilihan pengiriman
-  let whatsappLink;
-  if (deliveryOption === "Ambil Langsung") {
-    whatsappLink = `https://wa.me/628875295115?text=${encodeURIComponent(orderSummary)}`;
-  } else {
-    whatsappLink = `https://wa.me/628875295115?text=${encodeURIComponent(orderSummary)}`;
-  }
+// Penutupan pesan
+orderSummary += `Terima kasih telah berbelanja di CrumbCookie. Kami akan segera mengonfirmasi dan memproses pesanan Anda !!`;
 
-  // Membuka link WhatsApp
-  window.open(whatsappLink, '_blank');
+// Membuat link WhatsApp berdasarkan pilihan pengiriman
+let whatsappLink = `https://wa.me/628875295115?text=${encodeURIComponent(orderSummary)}`;
+
+// Membuka link WhatsApp
+window.open(whatsappLink, '_blank');
+
 
   // Reset keranjang dan sembunyikan form
   cart = []; // Reset cart jika perlu
@@ -200,5 +202,3 @@ function cancelForm() {
   // Menampilkan kembali tombol checkout
   document.getElementById('checkoutBtn').style.display = 'inline-block';
 }
-
-
