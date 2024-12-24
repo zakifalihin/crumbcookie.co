@@ -1149,6 +1149,12 @@ header nav ul li a:hover {
   cursor: pointer; /* Menampilkan pointer saat hover */
 }
 
+  @media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Tampilkan hamburger pada layar kecil */
+    }
+  }
+  
 .bar {
   height: 3px; /* Tinggi bar hamburger */
   width: 25px; /* Lebar bar hamburger */

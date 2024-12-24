@@ -1,13 +1,17 @@
 let cart = [];
 
-function toggleMenu() {
-  const menu = document.getElementById("navLinks");
-  const hamburger = document.getElementById("hamburger");
+// Mengambil elemen hamburger dan menu navigasi
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const navMenu = document.getElementById('navMenu');
 
-  // Toggle kelas "active" pada menu dan "open" pada hamburger
-  menu.classList.toggle("active");
-  hamburger.classList.toggle("open");
-}
+// Menambahkan event listener untuk mengatur interaksi hamburger
+hamburgerMenu.addEventListener('click', () => {
+    // Toggle kelas 'active' pada menu navigasi
+    navMenu.classList.toggle('active');
+    
+    // Toggle kelas 'open' pada hamburger untuk animasi
+    hamburgerMenu.classList.toggle('open');
+});
 
 function getProductImage(productName) {
   const productImages = {
