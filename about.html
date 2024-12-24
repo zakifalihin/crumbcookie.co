@@ -9,24 +9,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <title>Tentang Kami - CrumbCookie.co</title>
+  <title>About Us - CrumbCookie.co</title>
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="images/logocrumbcookie.png" alt="Logo CrumbCookie.co">
-      <h1>CrumbCookie.co</h1>
+        <img src="images/logocrumbcookie.png" alt="Logo CrumbCookie.co">
+        <h1>CrumbCookie.co</h1>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="keranjang.html">Keranjang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-      </ul>
+    <div class="hamburger" id="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <nav id="navMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
   <main id="about-section">
     <section class="about-content">
@@ -61,21 +65,7 @@
     <p>Kami berkomitmen untuk terlibat dengan komunitas dan memberikan dampak positif.</p>
   </div>
 </div>
-
-      <h3>Kenali Tim Kami</h3>
-      <div class="team">
-        <div class="team-member">
-          <img src="images/image.jpg" alt="Anggota Tim 1">
-          <h4>Jane Doe</h4>
-          <p>Pendiri & Kepala Pembuat Kue</p>
-        </div>
-        <div class="team-member">
-          <img src="images/team2.jpg" alt="Anggota Tim 2">
-          <h4>John Smith</h4>
-          <p>Manajer Pemasaran</p>
-        </div>
-      </div>
-    </section>
+  </section>
   </main>
 
   <footer>
@@ -87,5 +77,16 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    // JavaScript untuk mengatur menu hamburger
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburgerMenu.classList.toggle('open');
+    });
+</script>
 </body>
 </html>

@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Pengisian</title>
   <meta name="description"
     content="Nikmati berbagai macam kue lezat dari CrumbCookie.co. Dibuat dengan cinta, bahan terbaik, dan rasa yang tak tertandingi.">
   <meta name="keywords" content="cookies, CrumbCookie, kue lezat, cookies terbaik">
   <meta name="author" content="CrumbCookie.co">
-  <title>CrumbCookie.co | Home of Delicious Cookies</title>
+  <title>Home | CrumbCookie.co</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,23 +18,22 @@
 <body>
   <header>
     <div class="logo">
-      <img src="images/logocrumbcookie.png" alt="CrumbCookie.co Logo">
-      <h1>CrumbCookie.co</h1>
+        <img src="images/logocrumbcookie.png" alt="Logo CrumbCookie.co">
+        <h1>CrumbCookie.co</h1>
     </div>
     <div class="hamburger" id="hamburgerMenu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="keranjang.html">Keranjang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-      </ul>
+    <nav id="navMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-  </header>  
+</header> 
   
   <main>
     <section class="hero" id="home">
@@ -184,6 +182,17 @@
 
 <!-- Tambahkan link ke file JavaScript -->
 <script src="script.js"></script>
+
+<script>
+  // JavaScript untuk mengatur menu hamburger
+  const hamburgerMenu = document.getElementById('hamburgerMenu');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburgerMenu.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburgerMenu.classList.toggle('open');
+  });
+</script>
 </body>
 
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Contact - CrumbCookie.co</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logocrumbcookie.png" alt="Logo CrumbCookie.co">
+            <h1>CrumbCookie.co</h1>
+        </div>
+        <div class="hamburger" id="hamburgerMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact-info" class="contact-info">
+        <h2>Informasi Pengguna</h2>
+        <ul>
+            <li><strong>Nama:</strong> Admin</li>
+            <li><strong>Email:</strong> admin@example.com</li>
+            <li><strong>Telepon:</strong> +62 887 5295 115</li>
+            <li><strong>Alamat:</strong> Jl. Contoh No. 123, Indonesia</li>
+        </ul>
+    </section>
+
+    <section id="contact-form" class="contact-form">
+        <h2>Formulir Kontak</h2>
+        <form action="/submit" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <section id="map" class="map-section">
+        <h2>Peta Lokasi Kami</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d106.84559931512345!3d-6.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1234567890%3A0x1234567890abcdef!2sJl.%20Contoh%20No.%20123%2C%20Jakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1631234567890" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="kontak" id="kontak" data-aos="fade-up"></div>
+        <p>&copy; 2024 CrumbCookie.co - Semua Hak Dilindungi</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/crumbcookie.co" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@crumbcookie.co?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript untuk mengatur menu hamburger
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburgerMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

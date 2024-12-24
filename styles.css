@@ -1077,3 +1077,222 @@ header nav ul li a:hover {
   font-size: 1em; /* Ukuran font untuk deskripsi */
   color: #555; /* Warna deskripsi */
 }
+
+/* Kenali Tim Kami */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Menggunakan grid untuk tata letak */
+  gap: 20px; /* Jarak antar anggota tim */
+  margin-top: 30px;
+}
+
+.team-member {
+  background: #f9f9f9; /* Warna latar belakang yang lembut */
+  border-radius: 15px; /* Sudut membulat */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk kartu */
+  text-align: center; /* Teks di tengah */
+  padding: 20px; /* Padding di dalam kartu */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi saat hover */
+}
+
+.team-member:hover {
+  transform: translateY(-5px); /* Efek mengangkat saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
+}
+
+.team-member img {
+  width: 120px; /* Lebar gambar */
+  height: 120px; /* Tinggi gambar */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  margin-bottom: 15px; /* Jarak bawah untuk gambar */
+  border: 4px solid #d88c57; /* Border untuk gambar */
+  transition: transform 0.3s ease; /* Transisi untuk efek hover pada gambar */
+}
+
+.team-member img:hover {
+  transform: scale(1.1); /* Efek zoom saat gambar di-hover */
+}
+
+.team-member h4 {
+  font-size: 1.5em; /* Ukuran font untuk nama */
+  color: #333; /* Warna nama */
+  margin: 10px 0; /* Jarak atas dan bawah untuk nama */
+}
+
+.team-member p {
+  font-size: 0.9em; /* Ukuran font untuk deskripsi */
+  color: #666; /* Warna deskripsi */
+  margin-top: 0; /* Menghilangkan margin atas untuk deskripsi */
+}
+
+/* Media Query untuk Responsif di Mobile */
+@media (max-width: 768px) {
+  .team {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Menyesuaikan kolom di mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    grid-template-columns: 1fr; /* Menampilkan 1 anggota tim per baris di layar kecil */
+  }
+}
+
+
+
+
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Sembunyikan hamburger secara default */
+  flex-direction: column; /* Mengatur bar hamburger dalam kolom */
+  cursor: pointer; /* Menampilkan pointer saat hover */
+}
+
+.bar {
+  height: 3px; /* Tinggi bar hamburger */
+  width: 25px; /* Lebar bar hamburger */
+  background-color: white; /* Warna bar hamburger */
+  margin: 3px 0; /* Jarak antar bar */
+  transition: 0.3s; /* Transisi untuk efek animasi */
+}
+
+/* Menu Navigasi */
+nav {
+  display: flex; /* Menampilkan menu secara horizontal */
+}
+
+nav ul {
+  list-style-type: none; /* Menghilangkan bullet point */
+  padding: 0; /* Menghilangkan padding */
+  display: flex; /* Menampilkan menu secara horizontal */
+}
+
+nav ul li {
+  margin: 0 15px; /* Jarak antar item menu */
+}
+
+nav ul li a {
+  color: white; /* Warna teks menu */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  font-weight: 600; /* Menebalkan teks menu */
+  transition: color 0.3s; /* Transisi untuk efek hover */
+}
+
+nav ul li a:hover {
+  color: #fff8e1; /* Warna saat hover */
+}
+
+/* Bagian Kontak */
+.contact-info, .contact-form, .map-section {
+  background: #ffffff; /* Latar belakang putih untuk bagian kontak */
+  margin: 20px auto; /* margin atas dan bawah */
+  padding: 20px; /* Padding di dalam bagian */
+  border-radius: 10px; /* Sudut membulat */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+  max-width: 600px; /* Lebar maksimum */
+  transition: transform 0.3s; /* Transisi untuk efek hover */
+}
+
+.contact-info:hover, .contact-form:hover, .map-section:hover {
+  transform: translateY(-5px); /* Efek mengangkat saat hover */
+}
+
+.contact-info h2, .contact-form h2, .map-section h2 {
+  color: #d88c57; /* Warna judul sesuai tema cookies */
+  margin-bottom: 15px; /* Jarak bawah untuk judul */
+  font-size: 1.8em; /* Ukuran font judul */
+  border-bottom: 2px solid #d88c57; /* Garis bawah judul */
+  padding-bottom: 10px; /* Padding bawah untuk judul */
+}
+
+ul {
+  list-style-type: none; /* Menghilangkan bullet point */
+  padding: 0; /* Menghilangkan padding */
+}
+
+li {
+  margin: 10px 0; /* Jarak antar item */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Lebar penuh */
+  padding: 12px; /* Padding di dalam input */
+  border: 1px solid #ccc; /* Border abu-abu */
+  border-radius: 5px; /* Sudut membulat */
+  font-size: 16px; /* Ukuran font */
+  transition: border-color 0.3s; /* Transisi untuk border */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #d88c57; /* Warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+}
+
+.contact-form button {
+  padding: 12px; /* Padding di dalam tombol */
+  background-color: #d88c57; /* Warna tombol */
+  color: #fff; /* Warna teks tombol */
+  border: none; /* Menghilangkan border */
+  border-radius: 5px; /* Sudut membulat */
+  cursor: pointer; /* Menampilkan pointer saat hover */
+  font-size: 16px; /* Ukuran font tombol */
+  transition: background-color 0.3s; /* Transisi untuk efek hover */
+}
+
+.contact-form button:hover {
+  background-color: #c77a4e; /* Warna tombol saat hover */
+}
+
+.map-container {
+  margin-top: 20px; /* Jarak atas untuk peta */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Menyelaraskan teks ke tengah */
+  padding: 20px; /* Padding di dalam footer */
+  background-color: #d88c57; /* Warna footer */
+  color: white; /* Warna teks footer */
+  position: relative; /* Posisi relatif untuk footer */
+  bottom: 0; /* Menempatkan footer di bawah */
+  width: 100%; /* Lebar penuh */
+}
+
+/* Media Query untuk Responsif */
+@media (max-width: 768px) {
+  #navMenu {
+      display: none; /* Sembunyikan menu secara default */
+      flex-direction: column; /* Mengatur menu dalam kolom */
+      position: absolute; /* Posisi absolut untuk menu */
+      top: 70px; /* Jarak dari atas */
+      left: 0; /* Menyelaraskan ke kiri */
+      background: #d88c57; /* Warna latar belakang menu */
+      width: 100%; /* Lebar penuh untuk menu */
+      z-index: 1000; /* Menempatkan menu di atas elemen lain */
+  }
+
+  #navMenu.active {
+      display: flex; /* Tampilkan menu saat aktif */
+  }
+
+  .hamburger {
+      display: flex; /* Tampilkan hamburger pada layar kecil */
+  }
+
+  .hamburger.open .bar:nth-child(2) {
+      opacity: 0; /* Sembunyikan bar tengah saat hamburger terbuka */
+  }
+
+  .hamburger.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); /* Rotasi bar pertama */
+  }
+
+  .hamburger.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); /* Rotasi bar ketiga */
+  }
+}
